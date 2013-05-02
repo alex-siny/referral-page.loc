@@ -6,7 +6,7 @@
 .scrollable {
     position:relative;
     overflow:hidden;
-    width: 565px;
+    width:565px;
     height:130px;
 }
 
@@ -70,19 +70,42 @@ a.left:hover, a.left:active {
     background-position:1px -114px;
 }
 
-a.up, a.down  {
-    background:url(/media/img/scrollable/arrow/vert_large.png) no-repeat;
-    float: none;
-    margin: 10px 50px;
-}
-
-a.up:hover { background-position:-30px 0; }
-a.up:active { background-position:-60px 0; }
-
-a.down { background-position: 0 -30px; }
-a.down:hover { background-position:-30px -30px; }
-a.down:active { background-position:-60px -30px; }
-
 a.disabled {
     visibility:hidden !important;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .scrollable {
+        width:365px;
+        height:130px;
+    }
+
+    .scrollable img {
+        margin:34px 5px 34px 8px;
+        width:100px;
+        height:56px;
+    }
+
+    a.browse {
+        background:url("/img/arrow-small.png") no-repeat;
+        width:20px;
+        height:75px;
+        margin:28px 0;
+    }
+    a.right {
+        background-position: -20px 0;
+        margin-right: 0px;
+    }
+    a.right:hover, a.right:active {
+        background-position:-20px -75px;
+    }
+
+    a.left {
+        background-position: 1px 0;
+        margin-left: 0px;
+    }
+    a.left:hover, a.left:active {
+        background-position:1px -75px;
+    }
 }

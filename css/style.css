@@ -64,7 +64,7 @@ table {
  **/
 
 html {
-    background: url("/img/bg-img.jpg") #000 no-repeat center top;
+    background: url("/img/bg-img.jpg") #000 no-repeat center -30px;
     height: 100%;
 }
 
@@ -74,7 +74,6 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    min-width: 900px;
     font-family: 'Times New Roman', Arial, Verdana, sans-serif;
     line-height: 16px;
     font-size: 16px;
@@ -89,16 +88,16 @@ body {
 
 .content {
     position: relative;
-    width: 1100px;
+    max-width: 1100px;
+    min-width: 800px;
     margin: 0 auto;
-    padding:  0;
+    padding: 0 25px 0 25px;
     height: 100%;
 }
 
-.to-logo {
-    position: absolute;
-    top: 80px;
-    left: 0;
+.to-logo img {
+    width: 300px;
+    height: 400px;
 }
 
 .referral-button {
@@ -107,13 +106,15 @@ body {
 }
 
 aside.left {
+    margin: 80px 0 0 0;
     float: left;
     position: relative;
 }
 
 aside.right {
     margin: 140px 0 0 0;
-    width: 630px;
+    max-width: 630px;
+    min-width: 530px;
     float: right;
     position: relative;
 }
@@ -130,7 +131,13 @@ aside.right {
     margin: 65px 0 65px 0;
     background: #fff;
     opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    -khtml-opacity: 0.70;
+    -moz-opacity: 0.70;
     border-radius: 8px;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
     color: #000;
 }
 
@@ -172,4 +179,87 @@ aside.right {
 .play-button:active {
     position:relative;
     top:1px;
+}
+
+/**
+ * Stylesheets for different screen size
+ **/
+
+@media screen and (max-width: 1000px) {
+
+    html {
+        background: url("/img/bg-img.jpg") #000 no-repeat center -200px;
+    }
+
+    .content {
+        max-width: 1000px;
+        min-width: 800px;
+    }
+
+    .to-logo img {
+        width: 250px;
+        height: 333px;
+    }
+
+    aside.left {
+        margin: 30px 15px 0 0;
+    }
+
+    aside.right {
+        margin: 50px 0 0 0;
+        max-width: 530px;
+        min-width: 435px;
+    }
+
+    .slider-box {
+        width: 408px;
+        margin: 0 auto;
+    }
+
+    .about-to {
+        margin: 65px 0 65px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .content {
+        max-width: 800px;
+        min-width: 400px;
+    }
+
+    .to-logo img {
+        margin: 0 auto;
+        width: 180px;
+        height: 240px;
+    }
+
+    aside.left {
+        margin: 15px 0 0 0;
+        text-align: center;
+        float: none;
+    }
+
+    aside.right {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 435px;
+        min-width: 200px;
+        float: none;
+    }
+
+    .about-to {
+        margin: 0 0 25px 0;
+        opacity: 0.5;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=50);
+        -khtml-opacity: 0.50;
+        -moz-opacity: 0.50;
+    }
+
+    .referral-button {
+        padding: 75px 0 0 0;
+        margin: 0 auto;
+        float: none;
+    }
 }
